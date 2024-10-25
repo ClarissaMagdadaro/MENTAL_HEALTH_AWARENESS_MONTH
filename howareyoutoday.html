@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emotion Color Sticks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+      background: linear-gradient(135deg, #D8BFD8, #EEE8AA); /* Light purple mood */
+      color: #333;
+    }
+    h1 {
+      color: #4B0082;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo-container img {
+      width: 300px; /* Default width for mobile */
+      height: auto;
+    }
+    .stick-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .stick {
+      width: 70px;
+      height: 150px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      writing-mode: vertical-rl; /* Text written from top to bottom */
+      text-orientation: mixed;
+    }
+    #emotionDisplay {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #4B0082; /* Dark purple text */
+    }
+
+    /* Media query for laptops/PC */
+    @media(min-width: 768px) {
+      body {
+        margin: 50px;
+      }
+      .logo-container img {
+        width: 400px; /* Larger logo for larger screens */
+      }
+      .stick {
+        width: 80px;
+        height: 200px;
+        font-size: 1.2em;
+      }
+      #emotionDisplay {
+        font-size: 1.5em;
+        margin-top: 30px;
+      }
+    }
+
+    /* Media query for mobile screens */
+    @media(max-width: 480px) {
+      .stick {
+        width: 50px;
+        height: 120px;
+        font-size: 0.8em;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+      #emotionDisplay {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <!-- Add the uploaded logo here -->
+    <img src="Logo (1).png" alt="USLS GEC Bridge Peer Facilitators Logo">
+  </div>
+
+  <h1>Select a color</h1>
+  
+  <div class="stick-container">
+    <div class="stick" style="background-color: #ffff00;" onclick="displayEmotion('Joy')"></div>
+    <div class="stick" style="background-color: #0000ff;" onclick="displayEmotion('Sadness')"></div>
+    <div class="stick" style="background-color: #008000;" onclick="displayEmotion('Disgust')"></div>
+    <div class="stick" style="background-color: #800080;" onclick="displayEmotion('Fear')"></div>
+    <div class="stick" style="background-color: #ff0000;" onclick="displayEmotion('Anger')"></div>
+    <div class="stick" style="background-color: #ffa500;" onclick="displayEmotion('Anxiety')"></div>
+    <div class="stick" style="background-color: #40e0d0;" onclick="displayEmotion('Envy')"></div>
+    <div class="stick" style="background-color: #4b0082;" onclick="displayEmotion('Ennui')"></div>
+    <div class="stick" style="background-color: #ffc0cb;" onclick="displayEmotion('Embarrassment')"></div>
+    <div class="stick" style="background-color: #000000;" onclick="displayEmotion('Despair')"></div>
+  </div>
+  
+  <div id="emotionDisplay">Click on a color stick to show the emotion</div>
+
+  <script>
+    function displayEmotion(emotion) {
+      const emotionDisplay = document.getElementById("emotionDisplay");
+      emotionDisplay.textContent = `Emotion: ${emotion}`;
+    }
+  </script>
+</body>
+</html>
